@@ -1,39 +1,175 @@
 import Image from "next/image";
-
-const brandLogo = "data:image/webp;base64,UklGRkAVAABXRUJQVlA4IDQVAABwWwCdASqkAXcAPsFWpE2npKOiKBTMMPAYCU3aq+WgAsU/r64+aqPvn/zS7PcdPmek7+2+lJ0Yedb83Dfxt6lyDTy9/qu3D/K/lb6A+a0Ne1X+YflX+J5698vzK1Bfa289gE/Qv7b39GperSUCf6J/lfRg0OvXXsG9Ng9EQi7YIW34JvQsZL/zqwCxHtqLPH/FWsfKmEzI4t3lzPqPZYqWqJ+l3mfjQcGqno7r+SPQBHWp/14AshwTFolWtJnlXPhPyLZnlTg+dHJRh5HQXnyxK9CaDD7Kiy9Dr4zl9qHrdtKUBk5eIUnGy72J5YawWewiVl2qnsXSy3EfBV5wQyBM9pOgzLDdZ9hWTNvwjWGK75qeJwwSTiDWPRPS3RhywuZe3cDOJv0j1T+JuPZLTp57XH+kW2/6fadi7wqkjPa2Zim5ohb0et3Z65/jr72NnpQAGTLSMLQkW2banaWQZfoTofS6A85VOUIuQ2ld8sLPvy8Y/i2V8TBh01EUlEi3OJB5BOQFRRLx2+9vZOlkqewMc5tOT6/uoD5pZv4KqwmzED9nFJz8GEdYdBWWn0cdC/YWmnayMlHFbA0okpOPNQWSVMWrcHROwBpxcQuHmlo5RmVn8KD6pNUx3LiSpDbU9A7p38Ul3qES7VO2BklKvwOxGI+yH9kQUXut/y+hmcDzNAIIyMrn8o+OvTVXv1S3OQV23hEbij0zPg14F7kfvHGKvzR1Jmp+kHFxCgoZTnaB+hZXIg77CbTnfc1l2V6LqTMg/cVR2q9MLIpW8S9EOGhFo+VyILFZPXDS2384+fi/jZdNSsJCR9T6pvb2enD8CAwaPkJM9n0w69tvgwWDboRFdrU5hH8KNP0wbrHnTsj/Uy+bqy4HpOniJRsYHz9FKjRyHxr46UBoB3kz63svIJX3p2ATCIy7fD1PgnKIMzVa6WJIabPr3gooLvQf8BlpvHgzuwx9dahMJmc+cF1qbxiEbPIdwAD++DByecaGgWSQUcC6FyQVFou4vvZGZ7p/c9+NTtDLpVyBcWbOJgGtrTdASiUXY/zbnXypVlQ7sz/FxdCRZV4qJdt5bmFEw7ySfooClZ4TyqxqFzt0HtgY/r1YvbY0PWTLF62SVDI7iI/0lwUPgOL3e4JNV4wTQVv4e84lC4YXR4LMX/MgTz13WFu8DEFCIVwCermxQAAAWxdLUnFGNXldOH64dJEfpZ3WnJsSLfPgKv9OoUCZTvJ7KzaglWrVE6wkuKNymYR0kiSbpiSdBbBLAx/ltHvhz0qV+h+fQSJA8tn7L8+OpnELp+NmwT2XXmqk8PEgoUZQzdEUQ6hbiJNjkRPpNH+MRc4CjhtEBn3tmi5ItK3D0mwb1mmHF7JZvXlrr+cP4838Csq/b0moi6bkj138vNT7tHSfewQu7zKJfnMBR4pTU2Nkk2BbnJ5ibRPChXXTFCcxSU/OdNnHBGQpXrbi7FvGMS2wOwEfRKbwqJey2UBpbi4bw/+tM9WQ+xmjij4vUSsmlt5aFytnt0inRJgvL6DAj2vUdbTCoydvtjp/xwuaSTIeTUhTOLLZkAsrSURwU9DMh1maAEMy+hzfPCIvQWfHjtcjFMAASC1L0rsFiqZO4siwahBdUEQwOVBwT3/bjFehcdJamKopBcjVUK+aGfe9W4TyNI8FVIn5YntpBGTMp1Q+Qgf9pvLVgJwo5TUdf28qBFCraN8DzwozB3PkUDKlbIs2A+c18O8ei8pTeIGjaK1x/VhD/ZqBdBCOIbuc4SHJIIpItIu07w8D7xzfopj+tt+ze9XjR2tugCHWwU01YRZS/P9DozA6za4ryWMlVxH6CZEKI3sfYSqGUG7a62Ky0+fvqbOdGILk9mQsuoplk6HI2i9uxDbDw6NpW/OooL0+HJI7D2wOMyXlNViNNY2pDWskMWlZeLtgg4bM81hZ8jOZsiJYqUxrhZrH1c6YrTkY0KlQH02fQCYP38Scm/ZIfXtJf/is8lOkNdVCuv1pAciCqj4Dkf3jEkymUrXMH3DQwZ9Bae9avYVbg8NutF7p9YoOM2YSeTye5uKnCAM0CUY8zazXyvJ4d/v6iRlRX2ULf3wTH1uaQxpZkNEF50MvzmULGf2ZoIqXFjdwYV35Hu2wmPuY2usdjlgg0kek7yFDKc2el8u+Rv3XwU4v+Brv02L847mqJI8/MZlfEkATKmnm6+Ap1uDgqhnEqdByeWW8QicN3yDx8lkyyVk1pys9/JNLP4jl5Kyvgff2EylXF8M877MPUkO33ByFxQmPJXjb5Io6ueLZpO5dMGtAudtWh5S+5s4lv1s4obnl7Os/TaRmfL+eIprv+BsHEaIAsFhWBMBay4NcN0K2jpjzFW/n1n+CsEfUPVemmNWw3lJgjzYUkoylfKOdrfg9pFmawWB0voR3XStC3780kLsHhiyngLO3y8fMoJTPE75JZDbvUXO6dnWvmA3mj2wOLABK0Q+7zKesbnKzMZZ8rZE+vx4HAWTFHTcdl28UzEp8oKgfYlUkSBkhf2EXg2cVYbA1HVXOJLr88/6OIZ3KnBb4fhtuKnF/I6Y/9+woxfxrqA5zPo6kHg6/9QmEr2JqMXZ+5ogTr8FNG4mFvG7xzelIO8XgFin+jerSsN2GwRPPRSkUG1NxUjp8ui6m+7B1F692IxWTr+k48Xt3tOt4BEG4I4R4PEgqEbbRuNQ65jmQ1cgcwX/NlWgnJZjWpKEPDdtGsv3q7UnXZn/YxLuxZGpOf3BZ56AgDiT5cahGulkx8tFJ7O4m4MsimZ0bCE9H9kPfY3cCsuHuMR0Eue8sYqKTmWv5NK1CSSWaM/kB701li1sNB9AG222jOjmvAlbfTCcpTcFj/KgxYs5PKSzN0bZ/pX5p68DM2/AzEmUkZOdIyggsTE5CcWpzKTbmGZaYVkOSTFdjWcw8kaj6PTkOZa/9NxXKHSOQ8zXq5BBAzzd6oDzC7B9gWSLpn34CaWIzivBfuaeHGI5LZm8Hj9VrZltO5M9mn+VdUtFfbK+smEKep/UEzd9vhg8fDX3nibhxAOypVF5gKfpl0oc6NtP1JUR6/gmUb6YMGehctamVKaAK6Oos7PxWc9vr0hCJXKflp4ZALTTqO3IWI5xzO+UnQsGjvt4rOWAv6PQyvZ9K06rqEX1WinlD6SEFRZvsMRa4NIq9zZL85gJm0lm69vHMW1SNz0mSc+4ymsTBJS05wlT8bBX3+4n/ZYZrHpVpEYq1xTlBrh1YIX3RfcBHk2VMvQHpdGJwWXs5o6Y4HPYOm+ebcPvWTml5YErhnDok7kwe3wwG2RBQPxVROr8ZXl8BFYXps0oHnD8b28nG5QG1L3QN9UO9+67Q4/24c1i6XIH4Iobo+drKdA+f2lVr2nGczw6TpNgAS4fv7oAyGzpgw2A1+gom1EBQCwLuzmRBEpdqOf9LvLym7u5yVL/fwEPiSlL4w5T0PL76m63FToBh3b8kyR13Yc6M0swvPPlCOE2EommwcEmG0eASAqgqQRHQbLb/2y/qg0uWSVGLGNsFFsYn1Nde/rAQiv5SpErjga9AOdGN5nCYxgxdzBMEsz0WIQDc65o697btB7o48Bp28SNbdiQCOP6LYn4z0sHqUTSSpJaGvjjYo4bK2t8sSBrjGPZrQc8yOuw2rZiaZXORfz5wZk5DtTfTCAToefYcKC1BZFkMA12fORS0WcKSp1iCdh9vaND2F20xS1nuoQN2qcTW5t4hKZWgZDr1Aur7YzGuYtNORSadGVm+ZuNM3MSOuKMEf4yq/0zUtrHjNWFzV3qqdcwUVn6pyzF7aPaOUeD+gElUQyeWdcyJxUHLcN0JPdHpKyYk0WK+HMYN7SUpxAT4mLlwCH8STPUSA7mc0Ct0r9hRh9swO7HFngvjBZxF5NG3s6HzOUv5OIgZbaP6W6R+DcunxfbCB4ikBWeCWM26YOXl/0V+TizNhL6bxiE94xONes55Wc6NLYeT3oOy9r4aFWviXk5g7qyYnxhqM+2DiZii9CYVnpAZ8JAPZ1EXKHqvpFTUBnX0ykxJqpE3AkvRzMl/COlWSzmFE6YiqSaAchRM7x2r73xQYCnw6cud3E1nTyaNxc0bj/YFeAJFH6WizCYuMps2lzTsqRA//LP6CG/nOo4NppzaXZM3sdYR4s5MwbD/AFrHciIIKeLLPzX+4djh8i2azRn1xeepQkeowa+O5BY1M6vIHrKYHchbvrFXLg6CsrIh7PEGGuX963DsymDX3QxnMbvQyU38WCcD724RmMLNueX2RhEsb75LxQwc7aREIhSv5QGZ9h/V2oKJhGg/pemuOYE1ihap9Dat0Q6AVsVGvpouNmuXAc5eaxJ4sPBgWVXi8wcZ/Y0S5yp5zF7WseJ8FsDyLQSgMPWOlBJxHfKg8AQQGGdv8Sx7UKL3Uc3SzMAFjpF0hGemn2+YaxeZRWlVSeMHtvwFRTeCEkW5/0La6byWxaepb5Uh5TDRj2QXCvlbh8xIwhkCvIFJqU5/GIR2FllGtB+3tVJlrSl6OTURyqKY7s8c7rGMXfwWqM4wqRuKnMwi6DxdhCTJwCZFYPQeJKrDdni+vMFeu8zqKfoDj5DJjtOKX7vm7/SXQUuETarnDlK+PHwiTc0/Gj19mjFhAqbkaocvVZxMiJak9MuM7myb2aihwz8NRtH1n0tAdf6UC/ImWf4hRNFszLxj/F11kjpzDX/Qq5KvQ/c8S8rLj1onIpY18g1+2oFFiPa6lqD8NdmrKVTSUy3+HjE6WwWSvq5ZqtRA2QGgMZF1Jua0fEGLieRg1DQACvQa2OA0PjmbnrFodOyB6AL6P0pYnB2bFF8P0Pw/vJwps/ygaQji8sfxf2k8TXwF/E2aXQheTi57n62if5Hn+nhdTKqTQoRUlV9He75IYKDmzgstgN8e/hFI9zc2KveTR8nO80fHyHPTFNvJ3/0iMdmUv/Si4vCe9uXrUMMG1aiqrv2xa6tM8y+34SDv5oksTWQZsik3b0muYaMMakWIzKWfcFCX+AacJRN/WunAU+N71gnz42i9SlCilOxzdsYS016fnCTqzVW6N02q2CDibviDEHzxUdauqupQX5+Kuu2H/SELF7pyIYXj/527PTVA+rKC+ScoeBU0n8CwgarjcsHnDcsoNStitefPohXP3W4TVgSQSVc208ZaToK8qHq6zhiiRok8Qa8LpKuPwOglNDaXURPJOF/EgGEFCXzR12JzWkRbCNMxq3t6b31VqPRmKSpHxChHmatJHz7uF2APMS0Wduxmz0//HMwgidPzTxXx4Y8qly6lTJV461JD+ZP38KtIum8dfOcQNvYwoFJ2qE5BcjeXD5ueXtkG1BulBy1/7Y5ff+fammjb228cAO6kokqzK6iX7w0eQQgIkyRGxN/GNujrCPENm9w4zlR9/FcVlqiVEzEvq60IkjsQ7WnV6Qu3IZt6Q0nU3N5XBgdy4NUktJDGVpsAB1sOl5f5zq35d6M40Bhh1XD8zehSnWspoaOSC0ES4EgV4m+d64zEhBOfyMZSP5zuVKsrNYXcq2dH+bE6t9+WUvfQ4hAfOSdTBHw0v/yd1uW05NppdIhw+ho2+F4h/H/hQ1nULb4FOUDdPtLn19BvFKhLW3n1MfgZ/lt7siMYep+8T6Yoqs1vrKC3htaTl3kmjO36Rxuki52KNFZsCrbRnP+tZpZsEdOhwpOwYAXqfvUaoQCKrUdLBgRPnJDL+orS5nFEUDcS+FhDKRZDavc0wgX/Q6QeybBuKl6VjMwA0260hw1AbOeqN0X8LVAovngsC3UdulKLQm54mfUr07gz5lGyJ8mi0c0u81oQo6Q+M5rfZo6PIBRtDRINyQOtQ6fJq2ZMMXP8lFr+5pODIlyJSnzNCx7TlUsAh6inCeGzFvZNKF0PKfo4SQN6KILgoSs/S765SYOxarxHGCBAD7fgaAt5a1q9PMi1vWrSb3E2gXGFaR91AjsZip8VaATI7VypNR/0aey0AMsPden08YGbyJgs+9nGoazecsWHHfx/EHwyQ5ZcYht0i99bW7hX8NTmKhlAgtdojGmLqJEO3i1a7Lc6VG4KNb6eUt+VtQ3Wfjpb4TmeYCEpmXhWi7bw4GevpnWAAopNnhqHt25X62TQO4MPta3EUagZlPlQdJMoNHqhalV66c44CbXUsNn2kyJJ68Mwl/dmprzsK3pmzqBEn1M2Wrfcv9b+Tp3EuAf8RwJmbIbumZ92DkZ5sVt+tQyX1L2ySjub4y8t68jXAN/JL3vrvT8c3GrPilmrDufVsbNHvx2VCmS4aUT2FDsIGVnh9zdklQesvZxx3j/Y2Bbzqx1Q69O6I/InXm6CQltwfyqEDQMfU0tC9DdRZhRDBu6mJTYsGqVaovqaT7HHAgEdH1iVS0+pckWsjJVRbX3KRf56u8GYbzdi2XEdpoSyOc6PCwqYsGIhOgdqOaJh0LTIeKkGrff81ANmqNMhqEfwMzClDUHcCVNrq84AWj4p4XCsX9czRqUuiCn0Q1Qh/rZDYiQXYXPZvHY+8j7cT33OykvzcNl1QxNf58Zbof8eLoWJ4zAhyhbhE5nn9eP3XcH/EdGHc1J6ti/oCTsEYmfEJjXo7NOT+uxDj66CbDhW1B1ePws/g+KC0puCr4W6H+6BrccstCajDoncuy/URFYGreo5a14zupgotIr+5c1zc9XLlnG+0fYOyTVFzmmEQHgFiWnim+7eyT9cCTHTknVN5kvLYqEgav13M1f4xhsrRf/+y46XHF8UinfEiA57JKlwmtH58kEqhPRnHhw5Lul9QpUH4i5EyAlh/WoKtLcvfOYwhbvROcaFdsvYg8E+jI341SeFQivuZKkCODfT3iUKmhrsNx775A17CsqhnfErOexwg35wW5UGp64rkoi2qIqvgzO5Nhf7MwNFSVPvOf6Lm+18SPFgpNnEIwAlI2L7mt+FbNERXOql89m6B7AOcsvixVRRAcbKUpe6tfigAnDkzsfebCG/uoZ79WoTnLb3NE7666fJpiU5jiN3uuu12PQV1WoUt861r03JDXCjvik/QR0dswglYEyMs1VxxT5I9qfTnWhmxgI88g8TTKhgHefz3aTpiqcNMsoriYern9lxJJVvN1LMijWkTZj0FgQosMSbxQXw89tiDylQ9maTfm/RZnhujBP845PkGrE6xlcuX5yowcmxNmdb7X6OqaGTXwwZFAJzACF8lqjEpQKfsRn/lGTjF8SGuk6pPCPmmSEILcVRs+kdgAAA=";
+import HorecaForm from "@/components/HorecaForm";
 
 export default function Home() {
-  return <main>
-    <header className="nav shell">
-      <a className="brandLogo" href="#inicio" aria-label="Croissant.cl - La Boulangerie 17"><img src={brandLogo} alt="Croissant.cl - La Boulangerie 17" /></a>
-      <nav><a href="#inicio">Inicio</a><a href="#destacados">Destacados</a><a href="#proceso">Elaboración</a><a href="#laminado">Laminado</a><a href="#horeca">HORECA</a><a href="#historia">La Boulangerie 17</a></nav>
-      <a className="button gold compact" href="#destacados">Descubrir</a>
-    </header>
+  return (
+    <main>
+      <header className="nav shell">
+        <a className="brandLogo" href="#inicio" aria-label="Croissant.cl">
+          <Image src="/images/logo-lb17.webp" alt="" width={58} height={58} priority />
+          <span>
+            <strong>Croissant.cl</strong>
+            <small>LA BOULANGERIE 17</small>
+          </span>
+        </a>
+        <nav aria-label="Navegación principal">
+          <a href="#productos">Productos</a>
+          <a href="#proceso">Elaboración</a>
+          <a href="#horeca">HORECA</a>
+          <a href="#historia">Historia</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+        <a className="button gold compact" href="#horeca">Cotizar HORECA</a>
+      </header>
 
-    <section id="inicio" className="hero">
-      <div className="shell heroInner"><div className="heroCopy">
-        <p className="eyebrow">CROISSANTS ARTESANALES</p>
-        <h1>Más que un<br/>croissant, una<br/><em>experiencia.</em></h1>
-        <p className="lead">Elaborados con mantequilla francesa y método tradicional, con el sello artesanal de La Boulangerie 17.</p>
-        <div className="actions"><a className="button gold" href="#destacados">Ver destacados →</a><a className="button outline" href="#horeca">Cotizar HORECA</a></div>
-      </div></div>
-    </section>
+      <section id="inicio" className="hero">
+        <div className="heroCopy shell">
+          <div className="heroText">
+            <p className="eyebrow">CROISSANT.CL · LA BOULANGERIE 17</p>
+            <h1>Más que un croissant,<br/><em>una experiencia.</em></h1>
+            <p className="lead">Laminado artesanal, mantequilla francesa y belga, fermentación lenta y una elaboración limitada y exclusiva.</p>
+            <div className="actions">
+              <a className="button gold" href="#productos">Conocer nuestros productos →</a>
+              <a className="button outline" href="#horeca">Cotizar HORECA</a>
+            </div>
+          </div>
+          <div className="heroMedia">
+            <Image
+              src="/images/hero-croissant.webp"
+              alt="Croissants artesanales dorados"
+              fill
+              sizes="(max-width: 900px) 100vw, 55vw"
+              priority
+            />
+          </div>
+        </div>
+      </section>
 
-    <section className="trust shell"><div><b>◇</b><strong>Ingredientes premium</strong><span>Selección de primera calidad</span></div><div><b>♨</b><strong>Elaboración artesanal</strong><span>Método francés tradicional</span></div><div><b>✦</b><strong>Calidad garantizada</strong><span>Sabor y textura inigualables</span></div><div><b>▣</b><strong>Despachos</strong><span>Consulta cobertura disponible</span></div></section>
+      <section className="trust shell" aria-label="Atributos de Croissant.cl">
+        <div><b>01</b><strong>Mantequilla francesa y belga</strong><span>Ingredientes seleccionados</span></div>
+        <div><b>02</b><strong>Laminado artesanal</strong><span>Capas trabajadas a mano</span></div>
+        <div><b>03</b><strong>Fermentación lenta</strong><span>Tiempo, aroma y textura</span></div>
+        <div><b>04</b><strong>Elaboración limitada</strong><span>Producción exclusiva</span></div>
+      </section>
 
-    <section id="destacados" className="section shell featured">
-      <div className="featureMedia"><Image src="/images/croissants-chocolate.webp" alt="Croissants artesanales cubiertos de chocolate" fill sizes="(max-width: 850px) 100vw, 50vw" /></div>
-      <div className="featureCopy"><p className="eyebrow">SABORES DESTACADOS</p><h2>Chocolate intenso,<br/>laminado perfecto</h2><p>Una combinación de masa hojaldrada, mantequilla y chocolate generoso. Fotografías reales de nuestra producción, trabajadas para mantener una estética cálida y premium en toda la experiencia de croissant.cl.</p><p className="note">El catálogo completo y sus variedades se incorporarán en una siguiente etapa.</p></div>
-    </section>
+      <section id="productos" className="section shell productSpotlight">
+        <div className="featureMedia">
+          <Image src="/images/croissant-interior.webp" alt="Interior de croissant artesanal mostrando el laminado" fill sizes="(max-width: 850px) 100vw, 50vw" />
+        </div>
+        <div className="featureCopy">
+          <p className="eyebrow">PRODUCTO DESTACADO</p>
+          <h2>Croissant</h2>
+          <p>Una masa laminada de elaboración artesanal, trabajada con mantequilla francesa y belga y fermentación lenta para conseguir una estructura ligera, definida y crujiente.</p>
+          <div className="featureFacts">
+            <span>Laminado artesanal</span>
+            <span>Fermentación lenta</span>
+            <span>Elaboración limitada</span>
+          </div>
+          <a className="textLink" href="#proceso">Conoce cómo lo elaboramos →</a>
+        </div>
+      </section>
 
-    <section id="proceso" className="process"><div className="processVisual"><Image src="/images/rolls-artesanales.webp" alt="Rolls artesanales recién horneados en rack de panadería" fill sizes="(max-width: 850px) 100vw, 50vw"/></div><div className="processCopy"><p className="eyebrow">PRODUCCIÓN ARTESANAL</p><h2>Tradición francesa<br/>en cada hornada</h2><p>Trabajamos cada masa con laminado artesanal y fermentación lenta. La producción se realiza en lotes, cuidando color, textura, capas y terminación antes de cada despacho.</p><a className="button gold" href="#laminado">Ver el interior →</a></div></section>
+      <section id="proceso" className="process">
+        <div className="processVisual">
+          <Image src="/images/rolls-artesanales.webp" alt="Rollos artesanales de hojaldre recién horneados" fill sizes="(max-width: 850px) 100vw, 50vw" />
+        </div>
+        <div className="processCopy">
+          <p className="eyebrow">ELABORACIÓN ARTESANAL</p>
+          <h2>Tiempo, técnica<br/>y precisión</h2>
+          <p>Cada masa se trabaja con laminado artesanal y fermentación lenta. La producción es limitada, cuidando textura, capas, color y terminación en cada hornada.</p>
+          <a className="button gold" href="#laminado">Ver el interior →</a>
+        </div>
+      </section>
 
-    <section id="laminado" className="section shell featured"><div className="featureCopy"><p className="eyebrow">EL ARTE DEL LAMINADO</p><h2>Así se ve<br/>por dentro</h2><p>El alveolado abierto y las capas bien definidas son resultado del laminado, la fermentación y el control de temperatura. Esta estructura interior refleja el trabajo detrás de cada croissant.</p><p className="note">Un corte que permite apreciar la estructura, ligereza y desarrollo interno de nuestra masa.</p></div><div className="featureMedia"><Image src="/images/croissant-interior.webp" alt="Interior de croissant artesanal mostrando alveolado y capas" fill sizes="(max-width: 850px) 100vw, 50vw"/></div></section>
+      <section id="laminado" className="section shell featured">
+        <div className="featureCopy">
+          <p className="eyebrow">EL ARTE DEL LAMINADO</p>
+          <h2>Así se ve<br/>por dentro</h2>
+          <p>La estructura interior refleja el trabajo detrás de cada pieza: capas definidas, ligereza y desarrollo de la masa mediante tiempo, temperatura y técnica.</p>
+        </div>
+        <div className="featureMedia">
+          <Image src="/images/croissants-chocolate.webp" alt="Croissants artesanales terminados con chocolate" fill sizes="(max-width: 850px) 100vw, 50vw" />
+        </div>
+      </section>
 
-    <section id="horeca" className="horeca"><div className="shell horecaGrid"><div><p className="eyebrow">HORECA</p><h2>Soluciones para<br/>tu negocio</h2><p>Croissants frescos o congelados en formatos especiales para cafeterías, hoteles, restaurantes, tiendas gourmet y eventos.</p><a className="button gold" href="mailto:contacto@croissant.cl">Cotizar para mi negocio →</a></div><div className="benefits"><p>▱ Productos de alta rotación</p><p>◇ Formatos a tu medida</p><p>◉ Asesoría personalizada</p><p>▣ Soluciones de despacho</p></div></div></section>
+      <section id="horeca" className="horeca">
+        <div className="shell horecaIntro">
+          <div>
+            <p className="eyebrow">HORECA</p>
+            <h2>Hojaldres artesanales<br/>para tu negocio</h2>
+            <p>Formatos frescos y congelados para cafeterías, hoteles, restaurantes y empresas. Cotización personalizada, producción limitada y retiro o despacho según cobertura.</p>
+          </div>
+          <div className="horecaRules">
+            <p><strong>Pedido:</strong> 36 a 96 unidades, en múltiplos de 6.</p>
+            <p><strong>Anticipación:</strong> mínimo 72 horas.</p>
+            <p><strong>Días:</strong> jueves a sábado.</p>
+            <p><strong>Retiro:</strong> Lo Encalada 17, Ñuñoa.</p>
+            <p><strong>Despacho:</strong> sector oriente, tarifa fija $2.500.</p>
+          </div>
+        </div>
+        <div className="shell formWrap">
+          <HorecaForm />
+        </div>
+      </section>
 
-    <section id="historia" className="story shell section"><div><p className="eyebrow">LA BOULANGERIE 17</p><h2>Una historia de pasión</h2><p>Una propuesta artesanal nacida en Chile, donde combinamos técnica, ingredientes de primera calidad y un profundo respeto por la panadería francesa.</p><a className="textLink" href="#inicio">Volver al inicio →</a></div><blockquote>“Cada capa cuenta una historia: tiempo, técnica y buenos ingredientes.”<small>— La Boulangerie 17</small></blockquote></section>
+      <section id="historia" className="story shell section">
+        <div>
+          <p className="eyebrow">DESDE 2017</p>
+          <h2>La Boulangerie 17</h2>
+          <p>La Boulangerie 17 nació en 2017 como una panadería artesanal enfocada en productos de alta calidad. Croissant.cl desarrolla esa experiencia alrededor del hojaldre, el tiempo y la técnica.</p>
+        </div>
+        <blockquote>
+          “Elaboración artesanal, producción limitada y una obsesión por cada capa.”
+          <small>— Croissant.cl · La Boulangerie 17</small>
+        </blockquote>
+      </section>
 
-    <footer><div className="shell footerGrid"><div className="brand"><strong>croissant.cl</strong><small>LA BOULANGERIE 17</small></div><p>Tradición francesa, elaborada en Chile.</p><a className="button gold compact" href="#horeca">Cotizar HORECA →</a></div><div className="shell copyright">© {new Date().getFullYear()} Croissant.cl · La Boulangerie 17.</div></footer>
-  </main>;
+      <section className="instagram section">
+        <div className="shell instagramHead">
+          <div>
+            <p className="eyebrow">INSTAGRAM</p>
+            <h2>@croissant.chile</h2>
+          </div>
+          <a className="button darkButton" href="https://www.instagram.com/croissant.chile/" target="_blank" rel="noreferrer">Seguir en Instagram ↗</a>
+        </div>
+        <div className="shell instaPlaceholder" aria-label="Galería de Instagram">
+          <p>Las 6 publicaciones destacadas se administrarán desde el panel.</p>
+        </div>
+      </section>
+
+      <section id="contacto" className="contact section">
+        <div className="shell contactGrid">
+          <div>
+            <p className="eyebrow">CONTACTO</p>
+            <h2>Hablemos</h2>
+            <p>Para consultas generales puedes escribirnos a <a href="mailto:contacto@croissant.cl">contacto@croissant.cl</a>.</p>
+          </div>
+          <div className="contactCard">
+            <span>Instagram</span>
+            <a href="https://www.instagram.com/croissant.chile/" target="_blank" rel="noreferrer">@croissant.chile</a>
+            <span>Dirección de producción</span>
+            <strong>Lo Encalada 17, Ñuñoa</strong>
+            <small>No corresponde a un local de atención abierta al público.</small>
+            <a className="textLink" href="https://www.google.com/maps/search/?api=1&query=Lo+Encalada+17+Nunoa+Chile" target="_blank" rel="noreferrer">Cómo llegar ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div className="shell footerGrid">
+          <div className="footerBrand">
+            <Image src="/images/logo-lb17.webp" alt="" width={58} height={58} />
+            <div><strong>Croissant.cl</strong><small>LA BOULANGERIE 17</small></div>
+          </div>
+          <div className="footerLinks">
+            <a href="/privacidad">Privacidad</a>
+            <a href="/condiciones-horeca">Condiciones HORECA</a>
+            <a href="mailto:contacto@croissant.cl">Contacto</a>
+          </div>
+          <a className="button gold compact" href="#horeca">Cotizar HORECA →</a>
+        </div>
+        <div className="shell copyright">© {new Date().getFullYear()} Croissant.cl · Una marca de La Boulangerie 17.</div>
+      </footer>
+    </main>
+  );
 }
