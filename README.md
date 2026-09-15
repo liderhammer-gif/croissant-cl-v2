@@ -4,14 +4,14 @@ Nueva web de Croissant.cl / La Boulangerie 17 construida con Next.js, React, Typ
 
 ## Estado actual
 
-- Home pública premium con identidad Croissant.cl + LB17.
-- Hero con fotografía aprobada.
-- Producto destacado Croissant.
-- Secciones de elaboración, laminado, HORECA, historia, Instagram y contacto.
-- Formulario HORECA con validación de RUT, cantidades, fechas, comunas, retiro/despacho y aceptación de condiciones.
-- API HORECA preparada para guardar solicitudes en PostgreSQL y enviar confirmaciones por SMTP.
-- Protección Cloudflare Turnstile preparada mediante variables de entorno.
+- Home pública premium con identidad Croissant.cl + LB17 y hero fotográfico.
+- Producto destacado Croissant, proceso, laminado, historia, Instagram y contacto.
+- Formulario HORECA con RUT, productos, múltiplos de 6, 72 horas, retiro/despacho y reglas de cobertura.
+- API HORECA con PostgreSQL, SMTP y Cloudflare Turnstile.
+- Formulario de contacto general con persistencia en PostgreSQL, confirmación por correo y adjunto privado en Cloudflare R2.
 - Política de privacidad, condiciones HORECA, robots y sitemap.
+- Panel privado `/atelier-prive` con contraseña + TOTP, sesiones seguras, dashboard y vista de solicitudes.
+- Modelo de datos preparado para productos, precios, cotizaciones, pedidos, pagos, documentos, calendario y contenido.
 
 ## Desarrollo local
 
@@ -25,13 +25,22 @@ Abrir http://localhost:3000.
 
 ## Base de datos
 
-Crear una base PostgreSQL y ejecutar:
+Ejecutar en orden:
 
 ```bash
 psql "$DATABASE_URL" -f db/001_public_horeca.sql
+psql "$DATABASE_URL" -f db/002_admin_core.sql
 ```
 
-No subir contraseñas, secretos SMTP ni credenciales de base de datos a GitHub.
+## Crear el administrador
+
+La contraseña nunca debe guardarse en GitHub. Definirla temporalmente en el shell y ejecutar:
+
+```bash
+ADMIN_EMAIL="tu-correo" ADMIN_PASSWORD="una-clave-temporal-segura" npm run admin:bootstrap
+```
+
+El script devuelve el secreto/URI TOTP para configurar la app autenticadora. Después de crear el usuario, eliminar `ADMIN_PASSWORD` del entorno.
 
 ## Producción
 
@@ -41,14 +50,10 @@ npm run build
 npm start
 ```
 
-## Docker / Vultr
+## Vultr
 
-El contenedor de Next.js escucha en el puerto 3000. En producción se pondrá Nginx delante de `127.0.0.1:3000`, SSL para `croissant.cl` y `www.croissant.cl`, PostgreSQL con volumen persistente y el servicio de correo de `mail.croissant.cl`.
+El despliegue final contempla Nginx + SSL, PostgreSQL persistente, `mail.croissant.cl`, Cloudflare R2 y Turnstile. El contenedor de Next.js escucha en el puerto 3000.
 
-## Variables principales
+## Variables
 
-Ver `.env.example`: `DATABASE_URL`, SMTP y claves de Cloudflare Turnstile.
-
-## Siguiente bloque
-
-Panel privado `atelier-prive`: administración HORECA, productos, precios, cotizaciones, pedidos, pagos, calendario, documentos y contenido del sitio.
+Ver `.env.example`. Nunca subir contraseñas SMTP, base de datos, R2 ni secretos de Turnstile al repositorio.
