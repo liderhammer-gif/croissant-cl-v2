@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HorecaForm from "@/components/HorecaForm";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
@@ -34,13 +35,7 @@ export default function Home() {
             </div>
           </div>
           <div className="heroMedia">
-            <Image
-              src="/images/hero-croissant.webp"
-              alt="Croissants artesanales dorados"
-              fill
-              sizes="(max-width: 900px) 100vw, 55vw"
-              priority
-            />
+            <Image src="/images/hero-croissant.webp" alt="Croissants artesanales dorados" fill sizes="(max-width: 900px) 100vw, 55vw" priority />
           </div>
         </div>
       </section>
@@ -60,116 +55,47 @@ export default function Home() {
           <p className="eyebrow">PRODUCTO DESTACADO</p>
           <h2>Croissant</h2>
           <p>Una masa laminada de elaboración artesanal, trabajada con mantequilla francesa y belga y fermentación lenta para conseguir una estructura ligera, definida y crujiente.</p>
-          <div className="featureFacts">
-            <span>Laminado artesanal</span>
-            <span>Fermentación lenta</span>
-            <span>Elaboración limitada</span>
-          </div>
+          <div className="featureFacts"><span>Laminado artesanal</span><span>Fermentación lenta</span><span>Elaboración limitada</span></div>
           <a className="textLink" href="#proceso">Conoce cómo lo elaboramos →</a>
         </div>
       </section>
 
       <section id="proceso" className="process">
-        <div className="processVisual">
-          <Image src="/images/rolls-artesanales.webp" alt="Rollos artesanales de hojaldre recién horneados" fill sizes="(max-width: 850px) 100vw, 50vw" />
-        </div>
-        <div className="processCopy">
-          <p className="eyebrow">ELABORACIÓN ARTESANAL</p>
-          <h2>Tiempo, técnica<br/>y precisión</h2>
-          <p>Cada masa se trabaja con laminado artesanal y fermentación lenta. La producción es limitada, cuidando textura, capas, color y terminación en cada hornada.</p>
-          <a className="button gold" href="#laminado">Ver el interior →</a>
-        </div>
+        <div className="processVisual"><Image src="/images/rolls-artesanales.webp" alt="Rollos artesanales de hojaldre recién horneados" fill sizes="(max-width: 850px) 100vw, 50vw" /></div>
+        <div className="processCopy"><p className="eyebrow">ELABORACIÓN ARTESANAL</p><h2>Tiempo, técnica<br/>y precisión</h2><p>Cada masa se trabaja con laminado artesanal y fermentación lenta. La producción es limitada, cuidando textura, capas, color y terminación en cada hornada.</p><a className="button gold" href="#laminado">Ver el interior →</a></div>
       </section>
 
       <section id="laminado" className="section shell featured">
-        <div className="featureCopy">
-          <p className="eyebrow">EL ARTE DEL LAMINADO</p>
-          <h2>Así se ve<br/>por dentro</h2>
-          <p>La estructura interior refleja el trabajo detrás de cada pieza: capas definidas, ligereza y desarrollo de la masa mediante tiempo, temperatura y técnica.</p>
-        </div>
-        <div className="featureMedia">
-          <Image src="/images/croissants-chocolate.webp" alt="Croissants artesanales terminados con chocolate" fill sizes="(max-width: 850px) 100vw, 50vw" />
-        </div>
+        <div className="featureCopy"><p className="eyebrow">EL ARTE DEL LAMINADO</p><h2>Así se ve<br/>por dentro</h2><p>La estructura interior refleja el trabajo detrás de cada pieza: capas definidas, ligereza y desarrollo de la masa mediante tiempo, temperatura y técnica.</p></div>
+        <div className="featureMedia"><Image src="/images/croissants-chocolate.webp" alt="Croissants artesanales terminados con chocolate" fill sizes="(max-width: 850px) 100vw, 50vw" /></div>
       </section>
 
       <section id="horeca" className="horeca">
         <div className="shell horecaIntro">
-          <div>
-            <p className="eyebrow">HORECA</p>
-            <h2>Hojaldres artesanales<br/>para tu negocio</h2>
-            <p>Formatos frescos y congelados para cafeterías, hoteles, restaurantes y empresas. Cotización personalizada, producción limitada y retiro o despacho según cobertura.</p>
-          </div>
-          <div className="horecaRules">
-            <p><strong>Pedido:</strong> 36 a 96 unidades, en múltiplos de 6.</p>
-            <p><strong>Anticipación:</strong> mínimo 72 horas.</p>
-            <p><strong>Días:</strong> jueves a sábado.</p>
-            <p><strong>Retiro:</strong> Lo Encalada 17, Ñuñoa.</p>
-            <p><strong>Despacho:</strong> sector oriente, tarifa fija $2.500.</p>
-          </div>
+          <div><p className="eyebrow">HORECA</p><h2>Hojaldres artesanales<br/>para tu negocio</h2><p>Formatos frescos y congelados para cafeterías, hoteles, restaurantes y empresas. Cotización personalizada, producción limitada y retiro o despacho según cobertura.</p></div>
+          <div className="horecaRules"><p><strong>Pedido:</strong> 36 a 96 unidades, en múltiplos de 6.</p><p><strong>Anticipación:</strong> mínimo 72 horas.</p><p><strong>Días:</strong> jueves a sábado.</p><p><strong>Retiro:</strong> Lo Encalada 17, Ñuñoa.</p><p><strong>Despacho:</strong> sector oriente, tarifa fija $2.500.</p></div>
         </div>
-        <div className="shell formWrap">
-          <HorecaForm />
-        </div>
+        <div className="shell formWrap"><HorecaForm /></div>
       </section>
 
       <section id="historia" className="story shell section">
-        <div>
-          <p className="eyebrow">DESDE 2017</p>
-          <h2>La Boulangerie 17</h2>
-          <p>La Boulangerie 17 nació en 2017 como una panadería artesanal enfocada en productos de alta calidad. Croissant.cl desarrolla esa experiencia alrededor del hojaldre, el tiempo y la técnica.</p>
-        </div>
-        <blockquote>
-          “Elaboración artesanal, producción limitada y una obsesión por cada capa.”
-          <small>— Croissant.cl · La Boulangerie 17</small>
-        </blockquote>
+        <div><p className="eyebrow">DESDE 2017</p><h2>La Boulangerie 17</h2><p>La Boulangerie 17 nació en 2017 como una panadería artesanal enfocada en productos de alta calidad. Croissant.cl desarrolla esa experiencia alrededor del hojaldre, el tiempo y la técnica.</p></div>
+        <blockquote>“Elaboración artesanal, producción limitada y una obsesión por cada capa.”<small>— Croissant.cl · La Boulangerie 17</small></blockquote>
       </section>
 
       <section className="instagram section">
-        <div className="shell instagramHead">
-          <div>
-            <p className="eyebrow">INSTAGRAM</p>
-            <h2>@croissant.chile</h2>
-          </div>
-          <a className="button darkButton" href="https://www.instagram.com/croissant.chile/" target="_blank" rel="noreferrer">Seguir en Instagram ↗</a>
-        </div>
-        <div className="shell instaPlaceholder" aria-label="Galería de Instagram">
-          <p>Las 6 publicaciones destacadas se administrarán desde el panel.</p>
-        </div>
+        <div className="shell instagramHead"><div><p className="eyebrow">INSTAGRAM</p><h2>@croissant.chile</h2></div><a className="button darkButton" href="https://www.instagram.com/croissant.chile/" target="_blank" rel="noreferrer">Seguir en Instagram ↗</a></div>
+        <div className="shell instaPlaceholder" aria-label="Galería de Instagram"><p>Las 6 publicaciones destacadas se administrarán desde el panel.</p></div>
       </section>
 
       <section id="contacto" className="contact section">
         <div className="shell contactGrid">
-          <div>
-            <p className="eyebrow">CONTACTO</p>
-            <h2>Hablemos</h2>
-            <p>Para consultas generales puedes escribirnos a <a href="mailto:contacto@croissant.cl">contacto@croissant.cl</a>.</p>
-          </div>
-          <div className="contactCard">
-            <span>Instagram</span>
-            <a href="https://www.instagram.com/croissant.chile/" target="_blank" rel="noreferrer">@croissant.chile</a>
-            <span>Dirección de producción</span>
-            <strong>Lo Encalada 17, Ñuñoa</strong>
-            <small>No corresponde a un local de atención abierta al público.</small>
-            <a className="textLink" href="https://www.google.com/maps/search/?api=1&query=Lo+Encalada+17+Nunoa+Chile" target="_blank" rel="noreferrer">Cómo llegar ↗</a>
-          </div>
+          <div><p className="eyebrow">CONTACTO</p><h2>Hablemos</h2><p>Para consultas generales puedes escribirnos a <a href="mailto:contacto@croissant.cl">contacto@croissant.cl</a> o usar el formulario.</p><ContactForm /></div>
+          <div className="contactCard"><span>Instagram</span><a href="https://www.instagram.com/croissant.chile/" target="_blank" rel="noreferrer">@croissant.chile</a><span>Dirección de producción</span><strong>Lo Encalada 17, Ñuñoa</strong><small>No corresponde a un local de atención abierta al público.</small><a className="textLink" href="https://www.google.com/maps/search/?api=1&query=Lo+Encalada+17+Nunoa+Chile" target="_blank" rel="noreferrer">Cómo llegar ↗</a></div>
         </div>
       </section>
 
-      <footer>
-        <div className="shell footerGrid">
-          <div className="footerBrand">
-            <Image src="/images/logo-lb17.webp" alt="" width={58} height={58} />
-            <div><strong>Croissant.cl</strong><small>LA BOULANGERIE 17</small></div>
-          </div>
-          <div className="footerLinks">
-            <a href="/privacidad">Privacidad</a>
-            <a href="/condiciones-horeca">Condiciones HORECA</a>
-            <a href="mailto:contacto@croissant.cl">Contacto</a>
-          </div>
-          <a className="button gold compact" href="#horeca">Cotizar HORECA →</a>
-        </div>
-        <div className="shell copyright">© {new Date().getFullYear()} Croissant.cl · Una marca de La Boulangerie 17.</div>
-      </footer>
+      <footer><div className="shell footerGrid"><div className="footerBrand"><Image src="/images/logo-lb17.webp" alt="" width={58} height={58} /><div><strong>Croissant.cl</strong><small>LA BOULANGERIE 17</small></div></div><div className="footerLinks"><a href="/privacidad">Privacidad</a><a href="/condiciones-horeca">Condiciones HORECA</a><a href="mailto:contacto@croissant.cl">Contacto</a></div><a className="button gold compact" href="#horeca">Cotizar HORECA →</a></div><div className="shell copyright">© {new Date().getFullYear()} Croissant.cl · Una marca de La Boulangerie 17.</div></footer>
     </main>
   );
 }
