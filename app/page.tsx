@@ -4,7 +4,7 @@ export default function Home() {
   return <main>
     <header className="nav shell">
       <a className="brand" href="#inicio"><span className="mark">◒</span><strong>croissant.cl</strong><small>LA BOULANGERIE 17</small></a>
-      <nav><a href="#inicio">Inicio</a><a href="#destacados">Destacados</a><a href="#proceso">Elaboración</a><a href="#horeca">HORECA</a><a href="#historia">La Boulangerie 17</a></nav>
+      <nav><a href="#inicio">Inicio</a><a href="#destacados">Destacados</a><a href="#proceso">Elaboración</a><a href="#laminado">Laminado</a><a href="#horeca">HORECA</a><a href="#historia">La Boulangerie 17</a></nav>
       <a className="button gold compact" href="#destacados">Descubrir</a>
     </header>
 
@@ -35,7 +35,19 @@ export default function Home() {
       <div className="processVisual">
         <Image src="/images/rolls-artesanales.webp" alt="Rolls artesanales recién horneados en rack de panadería" fill sizes="(max-width: 850px) 100vw, 50vw"/>
       </div>
-      <div className="processCopy"><p className="eyebrow">PRODUCCIÓN ARTESANAL</p><h2>Tradición francesa<br/>en cada hornada</h2><p>Trabajamos cada masa con laminado artesanal y fermentación lenta. La producción se realiza en lotes, cuidando color, textura, capas y terminación antes de cada despacho.</p><a className="button gold" href="#horeca">Conoce nuestras soluciones →</a></div>
+      <div className="processCopy"><p className="eyebrow">PRODUCCIÓN ARTESANAL</p><h2>Tradición francesa<br/>en cada hornada</h2><p>Trabajamos cada masa con laminado artesanal y fermentación lenta. La producción se realiza en lotes, cuidando color, textura, capas y terminación antes de cada despacho.</p><a className="button gold" href="#laminado">Ver el interior →</a></div>
+    </section>
+
+    <section id="laminado" className="section shell featured">
+      <div className="featureCopy">
+        <p className="eyebrow">EL ARTE DEL LAMINADO</p>
+        <h2>Así se ve<br/>por dentro</h2>
+        <p>El alveolado abierto y las capas bien definidas son resultado del laminado, la fermentación y el control de temperatura. Esta estructura interior refleja el trabajo detrás de cada croissant.</p>
+        <p className="note">Un corte que permite apreciar la estructura, ligereza y desarrollo interno de nuestra masa.</p>
+      </div>
+      <div className="featureMedia">
+        <Image src="/images/croissant-interior.webp" alt="Interior de croissant artesanal mostrando alveolado y capas" fill sizes="(max-width: 850px) 100vw, 50vw"/>
+      </div>
     </section>
 
     <section id="horeca" className="horeca"><div className="shell horecaGrid"><div><p className="eyebrow">HORECA</p><h2>Soluciones para<br/>tu negocio</h2><p>Croissants frescos o congelados en formatos especiales para cafeterías, hoteles, restaurantes, tiendas gourmet y eventos.</p><a className="button gold" href="mailto:contacto@croissant.cl">Cotizar para mi negocio →</a></div><div className="benefits"><p>▱ Productos de alta rotación</p><p>◇ Formatos a tu medida</p><p>◉ Asesoría personalizada</p><p>▣ Soluciones de despacho</p></div></div></section>
