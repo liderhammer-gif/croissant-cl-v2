@@ -4,15 +4,17 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://croissant.cl"),
   title: { default: "Croissant.cl | La Boulangerie 17", template: "%s | Croissant.cl" },
-  description: "Croissants artesanales elaborados con inspiración francesa por La Boulangerie 17 en Chile.",
+  description: "Croissants y hojaldres artesanales de elaboración limitada. Laminado artesanal, mantequilla francesa y belga, fermentación lenta y soluciones HORECA.",
   openGraph: {
     title: "Croissant.cl | La Boulangerie 17",
-    description: "Croissants artesanales, sabores premium y soluciones HORECA.",
+    description: "Más que un croissant, una experiencia.",
     url: "https://croissant.cl",
     siteName: "Croissant.cl",
     locale: "es_CL",
-    type: "website"
-  }
+    type: "website",
+    images: [{ url: "/images/hero-croissant.webp", width: 720, height: 588, alt: "Croissants artesanales Croissant.cl" }]
+  },
+  icons: { icon: "/images/logo-lb17.webp" }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
