@@ -78,6 +78,26 @@ export default function Home() {
         <div className="shell formWrap"><HorecaForm /></div>
       </section>
 
+      <section id="faq-horeca" className="faq section">
+        <div className="shell faqGrid">
+          <div>
+            <p className="eyebrow">PREGUNTAS FRECUENTES</p>
+            <h2>HORECA, sin letra chica</h2>
+            <p className="faqLead">Las principales condiciones están visibles antes de enviar la solicitud y vuelven a detallarse en la cotización formal.</p>
+          </div>
+          <div className="faqList">
+            <details><summary>¿Cuál es el pedido mínimo?</summary><p>El pedido mínimo HORECA es de 36 unidades. Cada producto se solicita desde 6 unidades y siempre en múltiplos de 6.</p></details>
+            <details><summary>¿Cuál es el máximo por pedido?</summary><p>El máximo práctico es de 96 unidades por pedido, manteniendo la regla de múltiplos de 6.</p></details>
+            <details><summary>¿Con cuánta anticipación debo pedir?</summary><p>Las solicitudes requieren un mínimo de 72 horas de anticipación y están sujetas a capacidad y disponibilidad.</p></details>
+            <details><summary>¿Qué días entregan o permiten retiro?</summary><p>Los retiros y despachos HORECA se programan de jueves a sábado, en franjas de 09:00–13:00 o 14:00–18:00.</p></details>
+            <details><summary>¿Dónde despachan?</summary><p>El despacho está disponible en Ñuñoa, Providencia, Las Condes, Vitacura, Lo Barnechea y La Reina. La tarifa fija es de $2.500.</p></details>
+            <details><summary>¿Puedo retirar?</summary><p>Sí. El retiro se realiza en la dirección de producción, Lo Encalada 17, Ñuñoa, previa confirmación del pedido.</p></details>
+            <details><summary>¿Cómo se paga?</summary><p>El pago HORECA se realiza por transferencia bancaria: 50% de anticipo para confirmar y 50% restante antes del despacho o retiro.</p></details>
+            <details><summary>¿Emiten factura?</summary><p>Sí. La factura electrónica se emite manualmente una vez validados los datos de facturación del cliente.</p></details>
+          </div>
+        </div>
+      </section>
+
       <section id="historia" className="story shell section">
         <div><p className="eyebrow">DESDE 2017</p><h2>La Boulangerie 17</h2><p>La Boulangerie 17 nació en 2017 como una panadería artesanal enfocada en productos de alta calidad. Croissant.cl desarrolla esa experiencia alrededor del hojaldre, el tiempo y la técnica.</p></div>
         <blockquote>“Elaboración artesanal, producción limitada y una obsesión por cada capa.”<small>— Croissant.cl · La Boulangerie 17</small></blockquote>
@@ -95,7 +115,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer><div className="shell footerGrid"><div className="footerBrand"><Image src="/images/logo-lb17.webp" alt="" width={58} height={58} /><div><strong>Croissant.cl</strong><small>LA BOULANGERIE 17</small></div></div><div className="footerLinks"><a href="/privacidad">Privacidad</a><a href="/condiciones-horeca">Condiciones HORECA</a><a href="mailto:contacto@croissant.cl">Contacto</a></div><a className="button gold compact" href="#horeca">Cotizar HORECA →</a></div><div className="shell copyright">© {new Date().getFullYear()} Croissant.cl · Una marca de La Boulangerie 17.</div></footer>
+      <footer><div className="shell footerGrid"><div className="footerBrand"><Image src="/images/logo-lb17.webp" alt="" width={58} height={58} /><div><strong>Croissant.cl</strong><small>LA BOULANGERIE 17</small></div></div><div className="footerLinks"><a href="#faq-horeca">FAQ HORECA</a><a href="/privacidad">Privacidad</a><a href="/condiciones-horeca">Condiciones HORECA</a><a href="mailto:contacto@croissant.cl">Contacto</a></div><a className="button gold compact" href="#horeca">Cotizar HORECA →</a></div><div className="shell copyright">© {new Date().getFullYear()} Croissant.cl · Una marca de La Boulangerie 17.</div></footer>
     </main>
   );
 }
