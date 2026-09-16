@@ -103,9 +103,20 @@ export default function Home() {
         <blockquote>“Elaboración artesanal, producción limitada y una obsesión por cada capa.”<small>— Croissant.cl · La Boulangerie 17</small></blockquote>
       </section>
 
-      <section className="instagram section">
-        <div className="shell instagramHead"><div><p className="eyebrow">INSTAGRAM</p><h2>@croissant.chile</h2></div><a className="button darkButton" href="https://www.instagram.com/croissant.chile/" target="_blank" rel="noreferrer">Seguir en Instagram ↗</a></div>
-        <div className="shell instaPlaceholder" aria-label="Galería de Instagram"><p>Las 6 publicaciones destacadas se administrarán desde el panel.</p></div>
+      <section className="brands section" aria-labelledby="brands-title">
+        <div className="shell brandsHead">
+          <div>
+            <p className="eyebrow">NUESTRA SELECCIÓN</p>
+            <h2 id="brands-title">Marcas con las que trabajamos</h2>
+            <p>Elegimos materias primas profesionales por su calidad, regularidad y desempeño en pastelería y bollería artesanal.</p>
+          </div>
+        </div>
+        <div className="shell brandGrid" aria-label="Marcas de materias primas seleccionadas">
+          <div className="brandMark belcolade" aria-label="Belcolade">Belcolade</div>
+          <div className="brandMark valrhona" aria-label="Valrhona">VALRHONA</div>
+          <div className="brandMark corman" aria-label="Corman">CORMAN</div>
+          <div className="brandMark ellevire" aria-label="Elle & Vire">Elle <span>&amp;</span> Vire</div>
+        </div>
       </section>
 
       <section id="contacto" className="contact section">
