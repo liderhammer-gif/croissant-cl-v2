@@ -112,10 +112,10 @@ export default function Home() {
           </div>
         </div>
         <div className="shell brandGrid" aria-label="Marcas de materias primas seleccionadas">
-          <div className="brandMark belcolade" aria-label="Belcolade">Belcolade</div>
-          <div className="brandMark valrhona" aria-label="Valrhona">VALRHONA</div>
-          <div className="brandMark corman" aria-label="Corman">CORMAN</div>
-          <div className="brandMark ellevire" aria-label="Elle & Vire">Elle <span>&amp;</span> Vire</div>
+          <a className="brandMark belcolade" href="https://www.belcolade.com/" target="_blank" rel="noreferrer" aria-label="Visitar sitio oficial de Belcolade">Belcolade</a>
+          <a className="brandMark valrhona" href="https://www.valrhona.com/es" target="_blank" rel="noreferrer" aria-label="Visitar sitio oficial de Valrhona">VALRHONA</a>
+          <a className="brandMark corman" href="https://www.corman.pro/int/en/" target="_blank" rel="noreferrer" aria-label="Visitar sitio oficial de Corman">CORMAN</a>
+          <a className="brandMark ellevire" href="https://www.elle-et-vire.com/int/en/" target="_blank" rel="noreferrer" aria-label="Visitar sitio oficial de Elle & Vire">Elle <span>&amp;</span> Vire</a>
         </div>
       </section>
 
