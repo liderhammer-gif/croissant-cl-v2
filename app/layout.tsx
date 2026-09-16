@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CookieConsent from "@/components/CookieConsent";
 import "./globals.css";
+import "./public-extras.css";
 import "./admin.css";
 import "./forms.css";
 
